@@ -134,8 +134,8 @@ body {
 .footer {
     text-align: center;
     padding: 30px;
-    background: #ff99cc;
-    color: white;
+    background: pink;
+    color: black;
     border-radius: 15px;
     margin: 50px 15px 0;
 }
@@ -276,11 +276,11 @@ body {
 }
 
 /* Animasi tambahan */
-@keyframes sparkle {
+/* @keyframes sparkle {
     0% { opacity: 0; }
     50% { opacity: 1; }
     100% { opacity: 0; }
-}
+} */
 
 .header::after {
     content: '';
@@ -289,7 +289,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="%23ff69b4" stroke-width="2" fill="none"/></svg>');
-    animation: sparkle 2s infinite;
+    /* background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="%23ff69b4" stroke-width="2" fill="none"/></svg>');
+    animation: sparkle 2s infinite; */
     pointer-events: none;
 }
