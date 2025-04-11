@@ -1,0 +1,260 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffb6c1 0%, #ffe4e1 100%);
+    color: #4a4a4a;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+.heart {
+    font-size: 4em;
+    color: #ff1493;
+    animation: heartbeat 1.2s infinite;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.highlight {
+    color: #ff1493;
+    text-decoration: underline;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Love Letter */
+.love-letter {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.letter-content {
+    font-size: 1.1em;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+}
+
+.letter-content ul {
+    margin: 15px 30px;
+}
+
+.letter-content li {
+    margin-bottom: 8px;
+}
+
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    text-align: right;
+}
+
+/* Gallery */
+.gallery {
+    margin: 50px 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: #ff69b4;
+    color: white;
+    border-radius: 15px;
+    margin-top: 50px;
+}
+
+/* Animations */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tambahan CSS Baru */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.cassette {
+    font-size: 1.5em;
+    position: relative;
+    animation: cassetteFloat 2s ease-in-out infinite;
+}
+
+.tape {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background: #888;
+    top: 5px;
+    left: 5px;
+    animation: tapeSpin 3s linear infinite;
+    opacity: 0;
+}
+
+.cassette.playing .tape {
+    opacity: 1;
+}
+
+.music-label {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.countdown {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.countdown-item {
+    text-align: center;
+}
+
+.countdown-item span {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff1493;
+    display: block;
+}
+
+/* Update Footer */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: #d6336c;
+    color: white;
+    border-radius: 15px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animasi Baru */
+@keyframes cassetteFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes tapeSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

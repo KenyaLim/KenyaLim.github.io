@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story | 13 April Anniversary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Music Cassette -->
+        <div class="music-player" onclick="toggleMusic()">
+            <div class="cassette">
+                <div class="tape"></div>
+                📼
+            </div>
+            <span class="music-label">Now Playing: Cherry Coloured Funk</span>
+        </div>
+
+        <header class="header">
+            <div class="heart">♥</div>
+            <h1>Happy Anniversary, <span class="highlight">Sayangku</span></h1>
+            <p class="subtitle">13 April 2024 - Start of Forever</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    Days
+                </div>
+            </div>
+        </header>
+
+        <!-- ... (Sections love-letter dan gallery sama seperti sebelumnya) ... -->
+
+        <section class="timeline">
+            <h2>Our Timeline</h2>
+            <div class="timeline-item">
+                <div class="timeline-date">📅 13 April 2024</div>
+                <div class="timeline-content">Hari pertama kita resmi menjadi pasangan</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">🎉 13 April 2025</div>
+                <div class="timeline-content">Anniversary Pertama Kita!</div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Created with ♥ by [Nama Kamu]</p>
+            <p>© 2024 - Eternal Love Story</p>
+        </footer>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
+        <source src="https://open.spotify.com/track/3aS6u8N9eCSD2z3r0zN0jc?si=4f8d8c7b5b1c4c9a" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Musik dan Cassette
+        const audio = document.getElementById('bg-music');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            isPlaying ? audio.pause() : audio.play();
+            isPlaying = !isPlaying;
+            document.querySelector('.cassette').classList.toggle('playing');
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const anniversaryDate = new Date('April 13, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = anniversaryDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById('days').innerHTML = days;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
