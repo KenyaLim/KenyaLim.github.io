@@ -3,81 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Love Story | 13 April Anniversary</title>
+    <title>Our Love Journey - 13 April 2024</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Music Cassette -->
-        <div class="music-player" onclick="toggleMusic()">
-            <div class="cassette">
-                <div class="tape"></div>
-                📼
-            </div>
-            <span class="music-label">Now Playing: Cherry Coloured Funk</span>
+    <!-- Music Player -->
+    <div class="music-player" onclick="toggleMusic()">
+        <div class="vinyl">
+            <div class="label">C</div>
         </div>
+        <span class="music-text">Click to Play Music</span>
+    </div>
 
+    <div class="container">
         <header class="header">
             <div class="heart">♥</div>
-            <h1>Happy Anniversary, <span class="highlight">Sayangku</span></h1>
-            <p class="subtitle">13 April 2024 - Start of Forever</p>
-            <div class="countdown">
-                <div class="countdown-item">
-                    <span id="days">00</span>
-                    Days
-                </div>
-            </div>
+            <h1>Happy <span class="highlight">Togetherness</span> Days!</h1>
+            <div class="days-counter" id="daysCounter"></div>
+            <p class="subtitle">Since 13 April 2024</p>
         </header>
 
-        <!-- ... (Sections love-letter dan gallery sama seperti sebelumnya) ... -->
-
-        <section class="timeline">
-            <h2>Our Timeline</h2>
-            <div class="timeline-item">
-                <div class="timeline-date">📅 13 April 2024</div>
-                <div class="timeline-content">Hari pertama kita resmi menjadi pasangan</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">🎉 13 April 2025</div>
-                <div class="timeline-content">Anniversary Pertama Kita!</div>
+        <!-- Galeri Foto -->
+        <section class="gallery">
+            <h2>Our Sweet Memories</h2>
+            <div class="photo-grid">
+                <!-- Generate 16 foto -->
+                <div class="photo-item">
+                    <img src="img/1.jpg" alt="Memory 1" class="gallery-img">
+                </div>
+                <div class="photo-item">
+                    <img src="img/2.jpg" alt="Memory 2" class="gallery-img">
+                </div>
+                <!-- Tambahkan sampai 16 -->
+                <div class="photo-item">
+                    <img src="img/16.jpg" alt="Memory 16" class="gallery-img">
+                </div>
             </div>
         </section>
 
         <footer class="footer">
-            <p>Created with ♥ by [Nama Kamu]</p>
-            <p>© 2024 - Eternal Love Story</p>
+            <p>Created with ♡ by [Nama Kamu]</p>
+            <p>Every day with you is a blessing</p>
         </footer>
     </div>
 
     <!-- Audio Element -->
     <audio id="bg-music" loop>
-        <source src="https://open.spotify.com/track/3aS6u8N9eCSD2z3r0zN0jc?si=4f8d8c7b5b1c4c9a" type="audio/mpeg">
-        Your browser does not support the audio element.
+        <source src="cherry-coloured-funk.mp3" type="audio/mpeg">
+        Browser tidak mendukung audio
     </audio>
 
     <script>
-        // Musik dan Cassette
+        // Hitung hari bersama
+        function calculateDays() {
+            const startDate = new Date('2024-04-13');
+            const today = new Date();
+            const diffTime = today - startDate;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            document.getElementById('daysCounter').innerHTML = `${diffDays}<span>Days</span>`;
+        }
+        
+        // Kontrol musik
         const audio = document.getElementById('bg-music');
         let isPlaying = false;
-
+        
         function toggleMusic() {
             isPlaying ? audio.pause() : audio.play();
             isPlaying = !isPlaying;
-            document.querySelector('.cassette').classList.toggle('playing');
+            document.querySelector('.vinyl').classList.toggle('spinning');
         }
 
-        // Countdown Timer
-        function updateCountdown() {
-            const anniversaryDate = new Date('April 13, 2025 00:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = anniversaryDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById('days').innerHTML = days;
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        // Jalankan saat halaman dimuat
+        calculateDays();
+        setInterval(calculateDays, 1000);
     </script>
 </body>
 </html>
