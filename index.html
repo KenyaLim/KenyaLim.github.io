@@ -81,70 +81,243 @@
                 <!-- Foto 1-16 -->
                 <div class="photo-item">
                     <img src="img/1.jpg" alt="Memory 1" class="gallery-img">
-                    <div class="caption">First meeting at the park</div>
+                    <div class="caption">HERROWW ODIKKK</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/2.jpg" alt="Memory 2" class="gallery-img">
-                    <div class="caption">Our first date night</div>
+                    <div class="caption">kenik ditinggal main hape sama babab</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/3.jpg" alt="Memory 3" class="gallery-img">
-                    <div class="caption">First kiss</div>
+                    <div class="caption">odik potong rambuttt!!!</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/4.jpg" alt="Memory 4" class="gallery-img">
-                    <div class="caption">First dance</div>
+                    <div class="caption">tahun baru di Magelang!!</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/5.jpg" alt="Memory 5" class="gallery-img">
-                    <div class="caption">First hug</div>
+                    <div class="caption">INI WAKTU DULU KENI ODIK MASI TEMENANN</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/6.jpg" alt="Memory 6" class="gallery-img">
-                    <div class="caption">First kiss</div>
+                    <div class="caption">UTS LOGMAT DI KOS NICSAPPP</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/7.jpg" alt="Memory 7" class="gallery-img">
-                    <div class="caption">First kiss</div>
+                    <div class="caption">kenik odik </div>
                 </div>
                 <div class="photo-item">
                     <img src="img/8.jpg" alt="Memory 8" class="gallery-img">
-                    <div class="caption">First kiss</div>
+                    <div class="caption">kenik odik(2) odik seksi</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/9.jpg" alt="Memory 9" class="gallery-img">
-                    <div class="caption">First kiss</div>
+                    <div class="caption">bisep odik</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/10.jpg" alt="Memory 10" class="gallery-img">
-                    <div class="caption">First kiss</div>
+                    <div class="caption">odik gondrong</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/11.jpg" alt="Memory 11" class="gallery-img">
-                    <div class="caption">First kiss</div>
+                    <div class="caption">odik ngapain yah</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/12.jpg" alt="Memory 12" class="gallery-img">
-                    <div class="caption">First kiss</div>
+                    <div class="caption">taken by tara</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/13.jpg" alt="Memory 13" class="gallery-img">
-                    <div class="caption">First kiss</div>
+                    <div class="caption">kenik odik (3)</div>
                 </div>
                 <div class="photo-item">
                     <img src="img/14.jpg" alt="Memory 14" class="gallery-img">
-                    <div class="caption">First kiss</div>
-                </div>
-                <div class="photo-item">
-                    <img src="img/15.jpg" alt="Memory 15" class="gallery-img">
-                    <div class="caption">First kiss</div>
-                </div>
-                <div class="photo-item">
-                    <img src="img/16.jpg" alt="Memory 16" class="gallery-img">
-                    <div class="caption">Latest memory together</div>
+                    <div class="caption">taken by tara(2)</div>
                 </div>
             </div>
         </section>
+
+        <!-- Tambahkan di bagian body -->
+<div class="love-calculator">
+    <div class="floating-hearts">
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+    </div>
+    <div class="calculator-container">
+        <h3>Love Compatibility Meter</h3>
+        <div class="couple-names">
+            <span class="name">Bibib</span>
+            <span class="and">&</span>
+            <span class="name">Babab</span>
+        </div>
+        <div class="result-container">
+            <div class="percentage" id="lovePercentage">0%</div>
+            <div class="result-text" id="resultText">Calculating...</div>
+        </div>
+        <button class="calculate-btn" onclick="calculateLove()">Test Our Love ❤️</button>
+    </div>
+</div>
+
+<style>
+/* CSS Love Calculator */
+.love-calculator {
+    position: relative;
+    margin: 50px 0;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+    overflow: hidden;
+}
+
+.calculator-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.couple-names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 1.5em;
+}
+
+.name {
+    color: #ff1493;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(255, 20, 147, 0.3);
+}
+
+.and {
+    color: #ff69b4;
+    font-size: 0.8em;
+}
+
+.result-container {
+    margin: 30px 0;
+}
+
+.percentage {
+    font-size: 4em;
+    font-weight: bold;
+    color: #ff1493;
+    text-shadow: 0 4px 6px rgba(255, 20, 147, 0.3);
+    transform: scale(0);
+    transition: all 1s ease-out;
+}
+
+.percentage.active {
+    transform: scale(1);
+    animation: percentageGlow 2s infinite;
+}
+
+.result-text {
+    font-size: 1.2em;
+    color: #666;
+    min-height: 30px;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.result-text.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.calculate-btn {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+}
+
+.floating-hearts .heart {
+    position: absolute;
+    color: #ff69b4;
+    opacity: 0.3;
+    animation: float 6s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100%) translateX(var(--start-x)) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100%) translateX(var(--end-x)) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes percentageGlow {
+    0% { text-shadow: 0 0 10px rgba(255,20,147,0.3); }
+    50% { text-shadow: 0 0 20px rgba(255,20,147,0.5); }
+    100% { text-shadow: 0 0 10px rgba(255,20,147,0.3); }
+}
+</style>
+
+<script>
+function calculateLove() {
+    const percentageElement = document.getElementById('lovePercentage');
+    const resultText = document.getElementById('resultText');
+    let current = 0;
+    
+    // Reset animasi
+    percentageElement.classList.remove('active');
+    resultText.classList.remove('show');
+    
+    // Animasi hitung
+    const timer = setInterval(() => {
+        current += Math.floor(Math.random() * 5) + 1;
+        if(current >= 100) {
+            clearInterval(timer);
+            current = 100;
+            resultText.innerHTML = "Perfect Match! 💖<br>Forever Together!";
+        }
+        percentageElement.textContent = current + "%";
+        
+        if(current > 30) percentageElement.classList.add('active');
+        if(current > 20) resultText.textContent = "Chemistry Strong! 💘";
+        if(current > 50) resultText.textContent = "Soulmates Found! 💞";
+        if(current > 80) resultText.textContent = "True Love! 💕";
+        
+        if(current >= 30) resultText.classList.add('show');
+    }, 50);
+    
+    // Tambahkan floating hearts
+    const heartsContainer = document.querySelector('.floating-hearts');
+    for(let i = 0; i < 10; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = '♥';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.setProperty('--start-x', Math.random() * 100 - 50 + 'px');
+        heart.style.setProperty('--end-x', Math.random() * 100 - 50 + 'px');
+        heart.style.animationDelay = Math.random() * 2 + 's';
+        heartsContainer.appendChild(heart);
+    }
+}
+</script>
 
         <footer class="footer">
             <p>Created with ♡ by Kenik</p>
