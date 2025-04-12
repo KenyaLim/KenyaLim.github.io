@@ -797,3 +797,12 @@ h2 {
     50% { text-shadow: 0 0 20px rgba(255,20,147,0.5); }
     100% { text-shadow: 0 0 10px rgba(255,20,147,0.3); }
 }
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    color: black;
+    border-radius: 15px;
+    margin: 50px 15px 0;
+}
