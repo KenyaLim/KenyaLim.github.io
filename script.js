@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-
     // Days Counter Function
 function calculateDays() {
     const startDate = new Date('2024-04-13'); // Change to your anniversary date
@@ -446,3 +445,45 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+function calculateLove() {
+    const percentageElement = document.getElementById('lovePercentage');
+    const resultText = document.getElementById('resultText');
+    let current = 0;
+    
+    // Reset animasi
+    percentageElement.classList.remove('active');
+    resultText.classList.remove('show');
+    
+    // Animasi hitung
+    const timer = setInterval(() => {
+        current += Math.floor(Math.random() * 5) + 1;
+        if(current >= 100) {
+            clearInterval(timer);
+            current = 100;
+            resultText.innerHTML = "Perfect Match! 💖<br>Forever Together!";
+        }
+        percentageElement.textContent = current + "%";
+        
+        if(current > 30) percentageElement.classList.add('active');
+        if(current > 20) resultText.textContent = "Chemistry Strong! 💘";
+        if(current > 50) resultText.textContent = "Soulmates Found! 💞";
+        if(current > 80) resultText.textContent = "True Love! 💕";
+        
+        if(current >= 30) resultText.classList.add('show');
+    }, 50);
+    
+    // Tambahkan floating hearts
+    const heartsContainer = document.querySelector('.floating-hearts');
+    for(let i = 0; i < 10; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = '♥';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.setProperty('--start-x', Math.random() * 100 - 50 + 'px');
+        heart.style.setProperty('--end-x', Math.random() * 100 - 50 + 'px');
+        heart.style.animationDelay = Math.random() * 2 + 's';
+        heartsContainer.appendChild(heart);
+    }
+}
+
